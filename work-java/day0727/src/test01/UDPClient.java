@@ -13,7 +13,7 @@ public class UDPClient {
         DatagramSocket sendSocket = new DatagramSocket();
         String msg = "안녕하세요. 양유진입니다.";
         byte[] byteMsg = msg.getBytes(StandardCharsets.UTF_8);
-        DatagramPacket sendPacket = new DatagramPacket (byteMsg, byteMsg.length, new InetSocketAddress("59.27.84.200",9999) );
+        DatagramPacket sendPacket = new DatagramPacket (byteMsg, byteMsg.length, new InetSocketAddress("59.27.84.200",8888) );
         System.out.println("데이터를 송신합니다.");
         sendSocket.send(sendPacket);
         System.out.println("데이터 송신 완료.");

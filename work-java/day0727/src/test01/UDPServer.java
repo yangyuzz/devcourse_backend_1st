@@ -7,7 +7,7 @@ import java.net.SocketException;
 
 public class UDPServer {
     public static void main(String[] args) throws IOException {
-        DatagramSocket receiveSocket = new DatagramSocket(9999);
+        DatagramSocket receiveSocket = new DatagramSocket(8888);
         System.out.println("UDP 서버 시작됨.");
 
         while(true){
