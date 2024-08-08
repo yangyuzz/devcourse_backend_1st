@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    여기가 스프링이 객체 다 쳐박아두는 객체관리 스프링창고 되겠습니다. -> 나중에 자바파일로 변경됩니다.-->
+<!--    아래 두개중에 개발자가 원하는 문법을 선택하면 됨. (가장 최신 권장 버전은 생성자 주입이라고 함. 어차피 xml로 객체관리 하려나..;;)-->
+    <bean id="sonata1" class="ver2_spring_xml.Car">
+        <constructor-arg ref="koreaTire"/> <!-- 생성자를 통한 의존객체 주입 -->
+    </bean>
+
+    <bean id="sonata2" class="ver2_spring_xml.Car">
+        <property name="tire" ref="ctire"/> <!-- 설정자 setter를 통한 의존객체 주입 -->
+    </bean>
+
+    <bean id="ctire" class="ver2_spring_xml.ChinaTire"/>
+    <bean id="koreaTire" class="ver2_spring_xml.KoreaTire"/>
+</beans>
