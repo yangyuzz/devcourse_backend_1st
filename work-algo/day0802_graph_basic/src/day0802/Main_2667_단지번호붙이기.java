@@ -1,3 +1,5 @@
+package day0802;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

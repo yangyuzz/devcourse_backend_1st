@@ -1,3 +1,5 @@
+package day0802;
+
 import java.util.*;
 
 public class Main_1260_인접리스트 {
@@ -71,5 +73,6 @@ public class Main_1260_인접리스트 {
                 dfs(next);
             }
         }
+
     }
 }
