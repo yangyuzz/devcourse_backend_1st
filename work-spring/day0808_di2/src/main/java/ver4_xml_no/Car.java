@@ -1,14 +1,11 @@
-package ver3_componentscan;
+package ver4_xml_no;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-//@Component
-@Service // DB작업이 아니라 비즈니스 로직을 처리하는 객체구나! 정체 확인!
+
 public class Car {
     // Strategy 패턴의 핵심 : 의존하는 객체를 구체적으로 지정하지 않는다! 의존하는 객체의 결합도를 느슨하게 만든다.
-    @Autowired
     private Tire tire;
     private String model;
     private String color;

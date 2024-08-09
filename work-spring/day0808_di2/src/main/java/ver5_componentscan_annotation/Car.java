@@ -1,14 +1,15 @@
-package ver3_componentscan;
+package ver5_componentscan_annotation;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
-//@Component
-@Service // DB작업이 아니라 비즈니스 로직을 처리하는 객체구나! 정체 확인!
+//@Service // 이렇게 이 클래스 객체를 생성할 거지만 name을 지정하지 않았네? 기본이름은 클래스 첫글자 소문자로 바꾼 이름.
+@Service(value = "sonata")
 public class Car {
-    // Strategy 패턴의 핵심 : 의존하는 객체를 구체적으로 지정하지 않는다! 의존하는 객체의 결합도를 느슨하게 만든다.
-    @Autowired
+    @Autowired // 객체 이름에 의존하지 않고 객체 타입을 기반으로 객체를 탐색함.
+    @Qualifier("chinaTire")
     private Tire tire;
     private String model;
     private String color;

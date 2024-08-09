@@ -24,5 +24,12 @@ public class Driver {
 
         c1.printInfo();
         c2.printInfo();
+
+        System.out.println((Car) context.getBean("sonata1"));
+        System.out.println((Car) context.getBean("sonata1"));
+        System.out.println((Car) context.getBean("sonata1"));
+        System.out.println((Car) context.getBean("sonata2"));
+        System.out.println((Car) context.getBean("sonata2"));
+        System.out.println((Car) context.getBean("sonata2"));
     }
 }
