@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="jieun" class="ver1_aop_xml.Girl"/>
+    <bean id="daewon" class="ver1_aop_xml.Boy"/>
+
+    <bean id="common" class="ver1_aop_xml.CommonAspect"/>
+
+    <aop:config>
+        <aop:aspect ref="common">
+            <aop:pointcut id="ppp" expression="execution(public * make*(..))"/>
+            <aop:before method="bbbefore" pointcut-ref="ppp"/>
+            <aop:after-returning method="aaafterReturning" pointcut-ref="ppp"/>
+            <aop:after-throwing method="aaafterThrowing" pointcut-ref="ppp"/>
+            <aop:after method="aaafter" pointcut-ref="ppp"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

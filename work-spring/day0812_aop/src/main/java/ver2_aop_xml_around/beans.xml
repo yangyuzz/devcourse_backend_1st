@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/aop https://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <bean id="daewon" class="ver2_aop_xml_around.Boy"/>
+    <bean id="jieun" class="ver2_aop_xml_around.Girl"/>
+    <bean id="yangyu" class="ver2_aop_xml_around.CommonAspect"/>
+
+    <aop:config>
+        <aop:aspect ref="yangyu">
+            <aop:around method="aaaround" pointcut="execution(* make*())"/>
+        </aop:aspect>
+    </aop:config>
+</beans>
