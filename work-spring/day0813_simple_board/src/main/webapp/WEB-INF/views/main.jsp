@@ -11,7 +11,7 @@
     <title>게시판 메인 화면</title>
 </head>
 <body>
-    <a href="/simple/board.do?action=list">[목록보기]</a>
-    <a href="/simple/board.do?action=writeForm">[작성하러가기]</a>
+    <a href="<%=request.getContextPath()%>/board.do?action=list">[목록보기]</a>
+    <a href="<%=request.getContextPath()%>/board.do?action=writeForm">[작성하러가기]</a>
 </body>
 </html>

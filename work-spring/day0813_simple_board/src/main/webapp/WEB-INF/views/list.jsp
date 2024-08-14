@@ -19,7 +19,7 @@
 %>
         <tr>
             <td><%=b.getNo()%></td>
-            <td><%=b.getTitle()%></td>
+            <td><a href="<%=request.getContextPath()%>/board.do?action=view&no=<%=b.getNo()%>"><%=b.getTitle()%></a></td>
             <td><%=b.getWriter()%></td>
             <td><%=b.getRegDate()%></td>
             <td><%=b.getReadCount()%></td>
@@ -28,5 +28,6 @@
     }
 %>
 </table>
+<a href="<%=request.getContextPath()%>/board.do?action=writeForm">[게시글 작성하러 가기]</a>
 </body>
 </html>
