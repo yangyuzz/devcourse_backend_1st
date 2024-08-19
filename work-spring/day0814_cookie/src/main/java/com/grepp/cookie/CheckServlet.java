@@ -24,4 +24,5 @@ public class CheckServlet extends HttpServlet {
 
         req.getRequestDispatcher("/WEB-INF/views/checkCookie.jsp").forward(req,resp);
     }
+
 }
