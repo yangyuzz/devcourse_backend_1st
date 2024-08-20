@@ -13,6 +13,7 @@
 </head>
 <body>
 <%@ include file="common/header.jsp"%>
+<a href="<%=request.getContextPath()%>/board/writeForm.do">[글쓰기 하러가기]</a><br>
 <table border="1">
     <%
         List<BoardDTO> bList = (List<BoardDTO>) request.getAttribute("bList");
@@ -29,5 +30,6 @@
         }
     %>
 </table>
+
 </body>
 </html>

@@ -12,7 +12,12 @@
 </head>
 <body>
 <%@ include file="common/header.jsp"%>
+<br>
+<form action="<%=request.getContextPath()%>/board/write.do" method="post">
+    제목 : <input type="text" name="title"><br>
+    내용 : <textarea name="content"></textarea><br>
+    <input type="submit" value="작성완료">
+</form>
 
-이곳에서 글을 작성하게 됩니다.<br>
 </body>
 </html>

@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
+<script>
+    alert('<%=request.getAttribute("msg")%>');
+    location.href = '<%=request.getAttribute("path")%>'; // 주소표시줄에 넣어서 이동시킬 경로
+</script>
 
 </body>
 </html>
