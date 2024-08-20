@@ -12,5 +12,7 @@
 </head>
 <body>
 <%@ include file="common/header.jsp"%>
+
+이곳에서 글을 작성하게 됩니다.<br>
 </body>
 </html>

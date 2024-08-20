@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.grepp.model.dto.BoardDTO" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: 관리자
   Date: 2024-08-20
@@ -12,6 +13,21 @@
 </head>
 <body>
 <%@ include file="common/header.jsp"%>
-
+<table border="1">
+    <%
+        List<BoardDTO> bList = (List<BoardDTO>) request.getAttribute("bList");
+        for(BoardDTO b: bList){
+    %>
+    <tr>
+        <td><%=b.getNo()%></td>
+        <td><a href="<%=request.getContextPath()%>/board/read.do?no=<%=b.getNo()%>"><%=b.getTitle()%></a></td>
+        <td><%=b.getWriter()%></td>
+        <td><%=b.getRegDate()%></td>
+        <td><%=b.getReadCount()%></td>
+    </tr>
+    <%
+        }
+    %>
+</table>
 </body>
 </html>
