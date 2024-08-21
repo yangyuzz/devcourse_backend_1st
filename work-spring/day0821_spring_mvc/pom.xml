@@ -25,10 +25,28 @@
         <mysql-connector-java-version>8.0.31</mysql-connector-java-version>
         <mybatis-version>3.5.9</mybatis-version>
         <mybatis-spring-version>2.0.7</mybatis-spring-version>
+
+        <jackson-databind-version>2.15.2</jackson-databind-version>
+        <json-version>20230227</json-version>
         <!-- 버전관리 -->
     </properties>
 
     <dependencies>
+        <!-- JSON -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind-version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+<!--        <dependency>-->
+<!--            <groupId>org.json</groupId>-->
+<!--            <artifactId>json</artifactId>-->
+<!--            <version>${json-version}</version>-->
+<!--        </dependency>-->
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
