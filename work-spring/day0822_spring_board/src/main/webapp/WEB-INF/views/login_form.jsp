@@ -12,7 +12,7 @@
 </head>
 <body>
 <h2>로그인 화면입니다.</h2>
-<form action="<%=request.getContextPath()%>/member/login.do" method="post">
+<form action="<%=request.getContextPath()%>/member/login" method="post">
     <table>
         <tr>
             <td>ID :</td>

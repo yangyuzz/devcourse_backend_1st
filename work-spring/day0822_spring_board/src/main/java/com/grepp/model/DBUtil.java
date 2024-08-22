@@ -1,16 +1,20 @@
 package com.grepp.model;
 
+import org.springframework.stereotype.Component;
+
 import java.io.Closeable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+@Component
 public class DBUtil {
     public static final String url = "jdbc:mysql://127.0.0.1:3306/grepp";
     public static final String user = "root";
     public static final String password = "1234";
 
     static{
+        System.out.println("dbutil init");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {

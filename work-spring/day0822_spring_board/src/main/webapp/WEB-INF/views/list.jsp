@@ -13,7 +13,7 @@
 </head>
 <body>
 <%@ include file="common/header.jsp"%>
-<a href="<%=request.getContextPath()%>/board/writeForm.do">[글쓰기 하러가기]</a><br>
+<a href="<%=request.getContextPath()%>/board/write">[글쓰기 하러가기]</a><br>
 <table border="1">
     <%
         List<BoardDTO> bList = (List<BoardDTO>) request.getAttribute("bList");
@@ -21,7 +21,7 @@
     %>
     <tr>
         <td><%=b.getNo()%></td>
-        <td><a href="<%=request.getContextPath()%>/board/read.do?no=<%=b.getNo()%>"><%=b.getTitle()%></a></td>
+        <td><a href="<%=request.getContextPath()%>/board/read?no=<%=b.getNo()%>"><%=b.getTitle()%></a></td>
         <td><%=b.getWriter()%></td>
         <td><%=b.getRegDate()%></td>
         <td><%=b.getReadCount()%></td>

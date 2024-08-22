@@ -12,12 +12,12 @@
   if(loginId!=null){
 %>
   <%=loginId%>님 로그인 중이시네요. 환영합니다.<br/>
-  <a href="<%=request.getContextPath()%>/member/logout.do">[로그아웃]</a>
+  <a href="<%=request.getContextPath()%>/member/logout">[로그아웃]</a>
 <%
   }else{
 %>
-<a href="<%=request.getContextPath()%>/member/loginForm.do">[로그인 하러 가기]</a>
-<a href="<%=request.getContextPath()%>/member/joinForm.do">[회원가입]</a>
+<a href="<%=request.getContextPath()%>/member/login">[로그인 하러 가기]</a>
+<a href="<%=request.getContextPath()%>/member/join">[회원가입]</a>
 <%}%>
 <hr>
 

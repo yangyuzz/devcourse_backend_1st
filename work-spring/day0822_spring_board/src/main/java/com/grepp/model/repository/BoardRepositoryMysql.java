@@ -14,7 +14,9 @@ import java.util.List;
 
 @Component
 public class BoardRepositoryMysql implements BoardRepository {
-//    private BoardRepositoryMysql(){}
+    public BoardRepositoryMysql(){
+        System.out.println("repo init");
+    }
 //    private static BoardRepository instance = new BoardRepositoryMysql();
 //    public static BoardRepository getInstance() {
 //        return instance;

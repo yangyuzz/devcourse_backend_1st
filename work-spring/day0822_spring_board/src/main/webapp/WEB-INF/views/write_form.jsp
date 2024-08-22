@@ -13,7 +13,7 @@
 <body>
 <%@ include file="common/header.jsp"%>
 <br>
-<form action="<%=request.getContextPath()%>/board/write.do" method="post">
+<form action="<%=request.getContextPath()%>/board/write" method="post">
     제목 : <input type="text" name="title"><br>
     내용 : <textarea name="content"></textarea><br>
     <input type="submit" value="작성완료">
