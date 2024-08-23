@@ -4,6 +4,7 @@ package com.grepp.model.repository;
 import com.grepp.model.DBUtil;
 import com.grepp.model.dto.BoardDTO;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,7 +13,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+//@Component
+//@Repository
 public class BoardRepositoryMysql implements BoardRepository {
     public BoardRepositoryMysql(){
         System.out.println("repo init");

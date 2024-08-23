@@ -1,10 +1,12 @@
 package com.grepp.model.repository;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
 
-@Component
+//@Component
+@Repository
 public class MemberRepositoryMysql implements MemberRepository{
 //    private MemberRepositoryMysql(){}
 //    private static MemberRepositoryMysql instance = new MemberRepositoryMysql();
