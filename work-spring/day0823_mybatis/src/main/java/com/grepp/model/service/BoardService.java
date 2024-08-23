@@ -2,10 +2,7 @@ package com.grepp.model.service;
 
 import com.grepp.model.dto.BoardDTO;
 import com.grepp.model.repository.BoardRepository;
-import com.grepp.model.repository.BoardRepositoryMysql;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;

@@ -24,7 +24,7 @@
 
         <mysql-connector-java-version>8.3.0</mysql-connector-java-version>
         <mybatis-version>3.5.9</mybatis-version>
-        <mybatis-spring-version>2.0.7</mybatis-spring-version>
+        <mybatis-spring-version>3.0.3</mybatis-spring-version>
         <commons-dbcp2-version>2.9.0</commons-dbcp2-version>
 
         <jackson-databind-version>2.15.2</jackson-databind-version>

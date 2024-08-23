@@ -1,9 +1,7 @@
 package com.grepp.model.service;
 
 import com.grepp.model.repository.MemberRepository;
-import com.grepp.model.repository.MemberRepositoryMysql;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
@@ -20,6 +18,7 @@ public class MemberService {
     private MemberRepository repo;// = MemberRepositoryMysql.getInstance();
 
     public String login(String userid, String userpw) throws SQLException {
+//        return "grepp";
         return repo.selectOne(userid,userpw);
     }
 }

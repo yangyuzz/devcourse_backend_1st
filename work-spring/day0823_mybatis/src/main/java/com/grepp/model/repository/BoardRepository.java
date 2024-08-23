@@ -1,6 +1,7 @@
 package com.grepp.model.repository;
 
 import com.grepp.model.dto.BoardDTO;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.sql.SQLException;
 import java.util.List;
