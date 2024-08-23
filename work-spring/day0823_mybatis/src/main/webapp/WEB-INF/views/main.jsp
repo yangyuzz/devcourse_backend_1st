@@ -13,7 +13,7 @@
 <body>
 <%@ include file="common/header.jsp"%>
 <h2>백엔드 데브코스 MVC 게시판에 오신걸 환영합니다</h2>
-<a href="<%=request.getContextPath()%>/board/writeForm.do">[글쓰기 하러가기]</a>
+<a href="<%=request.getContextPath()%>/board/write">[글쓰기 하러가기]</a>
 <a href="<%=request.getContextPath()%>/board/list">[게시판 목록으로]</a>
 </body>
 </html>

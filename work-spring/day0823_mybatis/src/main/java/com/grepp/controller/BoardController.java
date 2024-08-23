@@ -22,6 +22,7 @@ public class BoardController {
     @GetMapping("/list")
     public ModelAndView list() throws SQLException {
         ModelAndView mav = new ModelAndView("list"); // /WEB-INF/views/list.jsp
+        System.out.println(boardService.getBoards());
         mav.addObject("bList", boardService.getBoards());
         return mav;
     }
@@ -32,7 +33,8 @@ public class BoardController {
     }
 
     @PostMapping("/write")
-    public ModelAndView write(BoardDTO board) throws SQLException {// 로그인 안된 사용자는 글쓰기 못하게 하고 싶음.
+    public ModelAndView write(BoardDTO board, HttpSession session) throws SQLException {// 로그인 안된 사용자는 글쓰기 못하게 하고 싶음.
+        board.setWriter((String)session.getAttribute("loginId"));
         boardService.write(board);
         ModelAndView mav = new ModelAndView("alert"); // /WEB-INF/views/list.jsp
         mav.addObject("msg", "write success");

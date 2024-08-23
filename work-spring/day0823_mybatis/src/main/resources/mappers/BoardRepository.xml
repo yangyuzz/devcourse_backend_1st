@@ -6,13 +6,24 @@
         INSERT INTO BOARD_TB(TITLE,WRITER,CONTENT,REG_DATE) VALUES(#{title},#{writer},#{content},NOW())
     </insert>
 
+<!--    <update id="update" parameterType="com.grepp.model.dto.BoardDTO">-->
+<!--        UPDATE BOARD_TB SET-->
+<!--        <if test="title != null">-->
+<!--            TITLE = #{title}-->
+<!--        </if>-->
+<!--        -->
+<!--    </update>-->
+
     <select id="selectAll" resultType="com.grepp.model.dto.BoardDTO">
-        SELECT NO,TITLE,WRITER,READ_COUNT,REG_DATE FROM BOARD_TB
+        SELECT NO,TITLE,WRITER,READ_COUNT as 'readCount',REG_DATE as 'regDate' FROM BOARD_TB
     </select>
 
-    <select id="selectOne" parameterType="int" resultType="com.grepp.model.dto.BoardDTO">
+    <select id="selectOne" parameterType="int" resultMap="rrr">
         SELECT NO,TITLE,WRITER,CONTENT,READ_COUNT,REG_DATE FROM BOARD_TB WHERE NO=#{no}
     </select>
 
-
+    <resultMap id="rrr" type="com.grepp.model.dto.BoardDTO">
+        <result property="readCount" column="read_count"/>
+        <result property="regDate" column="reg_date"/>
+    </resultMap>
 </mapper>

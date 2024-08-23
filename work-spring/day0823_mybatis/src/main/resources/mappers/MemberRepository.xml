@@ -3,6 +3,6 @@
 <mapper namespace="com.grepp.model.repository.MemberRepository">
 
     <select id="selectOne" resultType="String">
-        SELECT USERID FROM MEMBER_TB WHERE USERID=#{userid} AND USERPW=#{userpw}
+        SELECT USERID FROM MEMBER_TB WHERE USERID=#{uuu} AND USERPW=#{ppp}
     </select>
 </mapper>
