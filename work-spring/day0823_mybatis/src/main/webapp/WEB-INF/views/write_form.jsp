@@ -13,9 +13,11 @@
 <body>
 <%@ include file="common/header.jsp"%>
 <br>
-<form action="<%=request.getContextPath()%>/board/write" method="post">
+<form action="<%=request.getContextPath()%>/board/write" method="post" enctype="multipart/form-data">
     제목 : <input type="text" name="title"><br>
     내용 : <textarea name="content"></textarea><br>
+    <input type="file" name="uploadFile"><br>
+    <input type="file" name="uploadFile"><br>
     <input type="submit" value="작성완료">
 </form>
 

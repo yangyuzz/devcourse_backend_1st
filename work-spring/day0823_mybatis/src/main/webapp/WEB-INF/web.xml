@@ -25,11 +25,25 @@
             <param-value>/WEB-INF/spring/servlet-context.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
+        <multipart-config>
+            <max-file-size>52428800</max-file-size>
+            <max-request-size>52428800</max-request-size>
+            <file-size-threshold>0</file-size-threshold> <!-- 업로드 파일이 C:\programmers_upload로 저장되기 전에 임시로 거쳐가는 폴더에 메모리 크기 지정할 때 -->
+        </multipart-config>
     </servlet>
 
     <servlet-mapping>
         <servlet-name>dddd</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+<!--    <filter>-->
+<!--        <filter-name>MultipartFilter</filter-name>-->
+<!--        <filter-class>org.springframework.web.multipart.support.MultipartFilter</filter-class>-->
+<!--    </filter>-->
+<!--    <filter-mapping>-->
+<!--        <filter-name>MultipartFilter</filter-name>-->
+<!--        <url-pattern>/*</url-pattern>-->
+<!--    </filter-mapping>-->
 
 </web-app>

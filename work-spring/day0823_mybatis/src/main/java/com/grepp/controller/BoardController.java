@@ -5,10 +5,8 @@ import com.grepp.model.service.BoardService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.sql.SQLException;
@@ -32,8 +30,11 @@ public class BoardController {
         return "write_form";
     }
 
-    @PostMapping("/write")
-    public ModelAndView write(BoardDTO board, HttpSession session) throws SQLException {// 로그인 안된 사용자는 글쓰기 못하게 하고 싶음.
+    @PostMapping(value="/write")//, headers = ("content-type=multipart/*"))
+    public ModelAndView write(BoardDTO board, HttpSession session, @RequestParam(value="uploadFile", required = false) MultipartFile[] uploadFile) throws SQLException {// 로그인 안된 사용자는 글쓰기 못하게 하고 싶음.
+        System.out.println(uploadFile[0].getOriginalFilename());
+        System.out.println(uploadFile[1].getOriginalFilename());
+
         board.setWriter((String)session.getAttribute("loginId"));
         boardService.write(board);
         ModelAndView mav = new ModelAndView("alert"); // /WEB-INF/views/list.jsp

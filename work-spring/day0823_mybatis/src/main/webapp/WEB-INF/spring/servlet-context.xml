@@ -11,6 +11,8 @@
 
     <context:component-scan base-package="com.grepp.controller"/>
 
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/> <!-- public void setPrefix(String value){}-->
         <property name="suffix" value=".jsp"/>
