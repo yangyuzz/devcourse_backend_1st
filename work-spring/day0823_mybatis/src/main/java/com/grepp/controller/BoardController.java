@@ -20,10 +20,10 @@ public class BoardController {
     private BoardService boardService;
 
     @GetMapping("/list")
-    public ModelAndView list() throws SQLException {
+    public ModelAndView list(@RequestParam(name = "page", defaultValue = "1")int page) throws SQLException {
         ModelAndView mav = new ModelAndView("list"); // /WEB-INF/views/list.jsp
-        System.out.println(boardService.getBoards());
-        mav.addObject("bList", boardService.getBoards());
+        System.out.println(boardService.getBoards(page));
+        mav.addObject("pageData", boardService.getBoards(page)); // 현재 페이지를 기준으로 하단의 페이지 링크 정보와 보여질 게시글 목록 데이터까지 다 담아뒀음.
         return mav;
     }
 

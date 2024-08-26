@@ -19,6 +19,7 @@
         <property name="mapperLocations" value="classpath:/mappers/*.xml"/> <!-- SQL 명령어 어디있는지 설정.-->
     </bean>
 
+    <!-- 인터페이스로 작성된 repository를 인식해서 해당 추상화를 구현하는 클래스가 자동 생성될 수 있도록 스캔시키기.-->
     <bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.grepp.model.repository"/>
     </bean>

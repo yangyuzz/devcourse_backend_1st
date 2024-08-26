@@ -6,12 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 // SQL 실행은 Repo가 담당하고 나는 뭘 검사하고 판단하고 조작해내는 비즈니스 로직에 대한 책임만 구현함.
 //@Component
 @Service
 public class BoardService {
+    private static final int COUNT_PER_PAGE=10; // 한 페이지당 보여줄 글의 갯수
     @Autowired
     private BoardRepository repo;//= BoardRepositoryMysql.getInstance();
 
@@ -39,8 +42,34 @@ public class BoardService {
         return repo.insert(board);
     }
 
-    public List<BoardDTO> getBoards() throws SQLException {
-        return repo.selectAll();
+//    public List<BoardDTO> getBoards() throws SQLException {
+//        return repo.selectAll();
+//    }
+
+    // 현재 보고자 하는 페이지 정보가 들어왔을 때, 실제 해당 페이지에 보여져야 하는 List<BoardDTO>를 포함해서 페이지가 총 몇개 필요하고, 하단 페이지 링크는 1~10 or 11~20 같은 페이지 구간 계산
+    public Map<String, Object> getBoards(int page){
+        int totalCount = repo.selectCount(); // 총 게시글의 갯수(ex : 27)
+        int totalPageCount = totalCount / COUNT_PER_PAGE; // (ex : 27/10 = 2.7 = 2page 일단 필요하고)
+        if(totalCount%COUNT_PER_PAGE>0){ // 10개씩 2페이지 하고 7개의 글이 남은 상태라 페이지 하나 늘려주기.
+            totalPageCount++; // 총 페이지는 3개
+        }
+
+        int startPage = (page-1)/10 * 10 +1; // 현재 페이지가 11,12,13,...,20 이었을 때 -1 해서 10~19로 바꾸고. /10*10 하면 11,12,..,19 다 동일하게 10으로 통일됨.
+        int endPage = startPage+9; // 보통 화면 하단 시작페이지가 11이면 끝은 20, 21이면 30에서 끝나던데?
+        if(totalPageCount < endPage){ // 21~30이라고 계산했는데 총 페이지수가 28밖에 없었다? 페이지 너무 많다고 뻥치고 있네?
+            endPage = totalPageCount; // 마지막 페이지 링크를 총 페이지수로 줄여줍시다.
+        }
+
+        int startRow = (page-1) * COUNT_PER_PAGE; // 한 페이지당 보여질 글의 갯수 반영해서 db에 모든 글을 다 읽어오지 않고 여기부터 끊어서 읽으라고 알려줄 수 있음.
+        List<BoardDTO> boardList = repo.selectList(startRow, COUNT_PER_PAGE);
+        /////////////////// Service는 이렇게 여러가지 비즈니스 로직을 수행해서 데이터를 계산해냄. 계산한 데이터들을 싹 한군데에 모아서 주기.
+        Map<String, Object> resultData = new HashMap<>();
+        resultData.put("page", page);
+        resultData.put("startPage", startPage);
+        resultData.put("endPage", endPage);
+        resultData.put("totalPageCount", totalPageCount);
+        resultData.put("bList", boardList);
+        return resultData;
     }
 
 }

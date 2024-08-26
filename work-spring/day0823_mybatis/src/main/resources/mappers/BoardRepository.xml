@@ -18,8 +18,19 @@
         SELECT NO,TITLE,WRITER,READ_COUNT as 'readCount',REG_DATE as 'regDate' FROM BOARD_TB
     </select>
 
+
     <select id="selectOne" parameterType="int" resultMap="rrr">
         SELECT NO,TITLE,WRITER,CONTENT,READ_COUNT,REG_DATE FROM BOARD_TB WHERE NO=#{no}
+    </select>
+
+    <select id="selectList" resultType="com.grepp.model.dto.BoardDTO">
+        SELECT NO, TITLE, WRITER, READ_COUNT, REG_DATE FROM BOARD_TB
+        ORDER BY REG_DATE DESC
+        LIMIT #{sr}, #{cnt}
+    </select>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM BOARD_TB
     </select>
 
     <resultMap id="rrr" type="com.grepp.model.dto.BoardDTO">

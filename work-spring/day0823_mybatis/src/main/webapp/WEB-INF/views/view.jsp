@@ -43,6 +43,6 @@
     </tr>
 </table>
 <a href="#">[수정하기]</a>
-<a href="<%=request.getContextPath()%>/board/list.do">[게시판 목록으로]</a>
+<a href="<%=request.getContextPath()%>/board/list">[게시판 목록으로]</a>
 </body>
 </html>
