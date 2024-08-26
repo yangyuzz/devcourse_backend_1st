@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.grepp.model.repository.FileRepository">
+
+<!--    이렇게 하는게 커넥션 한번 연결로 여러 데이터를 삽입하므로 리소스를 효율적으로 사용하게 되지만 데이터 되게 많으면 하나의 명령 실행시간이 너무 길어질 수 있음. -->
+    <insert id="insertFiles">
+        INSERT INTO FILE_TB
+            (BNO, ORIGINAL_NAME, SAVED_PATH)
+        VALUES
+            <foreach collection="fileDTOList" item="fileDTO" separator=",">
+                (#{fileDTO.bno}, #{fileDTO.originalName}, #{fileDTO.savedPath})
+            </foreach>
+    </insert>
+
+    <insert id="insertFile" parameterType="com.grepp.model.dto.FileDTO">
+        INSERT INTO FILE_TB
+            (BNO, ORIGINAL_NAME, SAVED_PATH)
+        VALUES
+            (#{bno}, #{originalName}, #{savedPath})
+    </insert>
+
+    <select id="selectFiles" resultType="com.grepp.model.dto.FileDTO">
+        SELECT BNO as 'bno', FNO as 'fno', ORIGINAL_NAME as 'originalName', SAVED_PATH as 'savedPath'
+        FROM FILE_TB
+        WHERE BNO=#{bno}
+    </select>
+
+    <select id="selectFile" resultType="com.grepp.model.dto.FileDTO">
+        SELECT BNO as 'bno', FNO as 'fno', ORIGINAL_NAME as 'originalName', SAVED_PATH as 'savedPath'
+        FROM FILE_TB
+        WHERE FNO=#{fno}
+    </select>
+</mapper>

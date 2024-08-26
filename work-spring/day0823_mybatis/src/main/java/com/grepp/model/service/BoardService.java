@@ -1,7 +1,9 @@
 package com.grepp.model.service;
 
 import com.grepp.model.dto.BoardDTO;
+import com.grepp.model.dto.FileDTO;
 import com.grepp.model.repository.BoardRepository;
+import com.grepp.model.repository.FileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,9 @@ public class BoardService {
     private static final int COUNT_PER_PAGE=10; // 한 페이지당 보여줄 글의 갯수
     @Autowired
     private BoardRepository repo;//= BoardRepositoryMysql.getInstance();
+
+    @Autowired
+    private FileRepository fileRepo;
 
 //    private BoardService(){}
 //    private static BoardService instance = new BoardService();
@@ -72,4 +77,12 @@ public class BoardService {
         return resultData;
     }
 
+    public int saveFileInfos(List<FileDTO> fileDTOList, int bno){ // 작성된 글 하나에 파일이 여러개 첨부될 수 있음.
+        if(fileDTOList == null || fileDTOList.isEmpty()) return 0;
+
+        for(FileDTO f: fileDTOList){ // 파일이름originalName, 저장된경로savedPath만 설정되어 있으니까 게시글 번호 붙여서 insert 시켜야 됨!
+            f.setBno(bno);
+        }
+        return fileRepo.insertFiles(fileDTOList);
+    }
 }
