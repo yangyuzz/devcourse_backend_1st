@@ -6,6 +6,7 @@ import com.grepp.model.repository.BoardRepository;
 import com.grepp.model.repository.FileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
 import java.util.HashMap;
@@ -40,9 +41,12 @@ public class BoardService {
 //  }
     // 위에처럼 로직을 수행하는 메소드. 지금은 처리하지 않았음.
     public BoardDTO read(int bno) throws SQLException {
-        return repo.selectOne(bno);
+        BoardDTO boardDTO = repo.selectOne(bno); // board_tb에서 조회
+        boardDTO.setFileDTOList(fileRepo.selectFiles(bno)); // file_tb에서 조회
+        return boardDTO;
     }
 
+    @Transactional
     public int write(BoardDTO board) throws SQLException {
         return repo.insert(board);
     }
@@ -52,6 +56,7 @@ public class BoardService {
 //    }
 
     // 현재 보고자 하는 페이지 정보가 들어왔을 때, 실제 해당 페이지에 보여져야 하는 List<BoardDTO>를 포함해서 페이지가 총 몇개 필요하고, 하단 페이지 링크는 1~10 or 11~20 같은 페이지 구간 계산
+    @Transactional
     public Map<String, Object> getBoards(int page){
         int totalCount = repo.selectCount(); // 총 게시글의 갯수(ex : 27)
         int totalPageCount = totalCount / COUNT_PER_PAGE; // (ex : 27/10 = 2.7 = 2page 일단 필요하고)
@@ -84,5 +89,10 @@ public class BoardService {
             f.setBno(bno);
         }
         return fileRepo.insertFiles(fileDTOList);
+    }
+
+    public FileDTO getFileInfo(int fno){
+        // file 다운로드 카운트를 update 한다던지 뭐 부가작업 필요하면 여기서 해야 함.
+        return fileRepo.selectFile(fno);
     }
 }

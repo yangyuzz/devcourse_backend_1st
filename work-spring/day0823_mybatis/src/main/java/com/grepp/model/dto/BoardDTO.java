@@ -1,6 +1,8 @@
 package com.grepp.model.dto;
 
 
+import java.util.List;
+
 // (DataTransferObject) DTO == (VariableObject)VO == BEAN
 public class BoardDTO {
     private int no;
@@ -9,6 +11,7 @@ public class BoardDTO {
     private String writer;
     private int readCount;
     private String regDate;
+    private List<FileDTO> fileDTOList;
 
     public BoardDTO() {
     }
@@ -65,6 +68,14 @@ public class BoardDTO {
 
     public void setRegDate(String regDate) {
         this.regDate = regDate;
+    }
+
+    public List<FileDTO> getFileDTOList() {
+        return fileDTOList;
+    }
+
+    public void setFileDTOList(List<FileDTO> fileDTOList) {
+        this.fileDTOList = fileDTOList;
     }
 
     @Override

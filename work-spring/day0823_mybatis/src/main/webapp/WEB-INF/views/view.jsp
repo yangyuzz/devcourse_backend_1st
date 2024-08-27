@@ -1,4 +1,5 @@
-<%@ page import="com.grepp.model.dto.BoardDTO" %><%--
+<%@ page import="com.grepp.model.dto.BoardDTO" %>
+<%@ page import="com.grepp.model.dto.FileDTO" %><%--
   Created by IntelliJ IDEA.
   User: 관리자
   Date: 2024-08-20
@@ -41,6 +42,23 @@
         <td>내용 : </td>
         <td><%=bbb.getContent()%></td>
     </tr>
+    <%
+        if(bbb.getFileDTOList()!=null && !bbb.getFileDTOList().isEmpty()){
+    %>
+    <tr>
+        <td colspan="2">
+            <%
+            for(FileDTO f: bbb.getFileDTOList()){
+            %>
+                <a href="<%=request.getContextPath()%>/board/download?fno=<%=f.getFno()%>">첨부파일 : <%=f.getOriginalName()%></a><br>
+            <%
+            }
+            %>
+        </td>
+    </tr>
+    <%
+        }
+    %>
 </table>
 <a href="#">[수정하기]</a>
 <a href="<%=request.getContextPath()%>/board/list">[게시판 목록으로]</a>
