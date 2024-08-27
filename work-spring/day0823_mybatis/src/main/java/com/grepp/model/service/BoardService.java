@@ -42,7 +42,7 @@ public class BoardService {
     // 위에처럼 로직을 수행하는 메소드. 지금은 처리하지 않았음.
     public BoardDTO read(int bno) throws SQLException {
         BoardDTO boardDTO = repo.selectOne(bno); // board_tb에서 조회
-        boardDTO.setFileDTOList(fileRepo.selectFiles(bno)); // file_tb에서 조회
+//        boardDTO.setFileDTOList(fileRepo.selectFiles(bno)); // file_tb에서 조회
         return boardDTO;
     }
 

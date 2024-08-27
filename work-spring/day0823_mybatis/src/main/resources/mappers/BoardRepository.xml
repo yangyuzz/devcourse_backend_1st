@@ -15,13 +15,34 @@
 <!--    </update>-->
 
     <select id="selectAll" resultType="com.grepp.model.dto.BoardDTO">
-        SELECT NO,TITLE,WRITER,READ_COUNT as 'readCount',REG_DATE as 'regDate' FROM BOARD_TB
+         SELECT NO,TITLE,WRITER,READ_COUNT as 'readCount',REG_DATE as 'regDate' FROM BOARD_TB
     </select>
 
 
     <select id="selectOne" parameterType="int" resultMap="rrr">
-        SELECT NO,TITLE,WRITER,CONTENT,READ_COUNT,REG_DATE FROM BOARD_TB WHERE NO=#{no}
+        <!-- SELECT NO,TITLE,WRITER,CONTENT,READ_COUNT,REG_DATE FROM BOARD_TB WHERE NO=#{no} -->
+        SELECT
+            NO, title, writer, CONTENT, READ_COUNT, REG_DATE, FNO, ORIGINAL_NAME, SAVED_PATH
+        FROM
+            BOARD_TB B JOIN FILE_TB F
+        ON
+            B.NO = F.BNO
+        WHERE
+            B.NO = #{no}
     </select>
+    <resultMap id="rrr" type="com.grepp.model.dto.BoardDTO">
+        <result property="no" column="no"/>
+        <result property="title" column="title"/>
+        <result property="writer" column="writer"/>
+        <result property="content" column="content"/>
+        <result property="readCount" column="READ_COUNT"/>
+        <result property="regDate" column="REG_DATE"/>
+        <collection property="fileDTOList" ofType="com.grepp.model.dto.FileDTO">
+            <result column="FNO" property="fno"/>
+            <result column="SAVED_PATH" property="savedPath"/>
+            <result column="ORIGINAL_NAME" property="originalName"/>
+        </collection>
+    </resultMap>
 
     <select id="selectList" resultType="com.grepp.model.dto.BoardDTO">
         SELECT NO, TITLE, WRITER, READ_COUNT, REG_DATE FROM BOARD_TB
@@ -33,8 +54,4 @@
         SELECT COUNT(*) FROM BOARD_TB
     </select>
 
-    <resultMap id="rrr" type="com.grepp.model.dto.BoardDTO">
-        <result property="readCount" column="read_count"/>
-        <result property="regDate" column="reg_date"/>
-    </resultMap>
 </mapper>
