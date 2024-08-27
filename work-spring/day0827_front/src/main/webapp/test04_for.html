@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>태그에 반복처리</title>
+</head>
+<body>
+    <div class="aaa">a</div>
+    <div class="aaa bbb">b</div>
+    <div class="aaa">c</div>
+    <div class="aaa">d</div>
+    <div class="bbb">e</div>
+    <div class="bbb">f</div>
+
+    <script>
+        // aaa 클래스 속성 가지는 element가 여러개라서 divs는 배열임.
+        let divs = document.getElementsByClassName('aaa');
+        for(let i=0; i<divs.length; i++){
+            divs[i].style.backgroundColor = "yellow";
+            divs[i].onclick = function(){
+                this.style.backgroundColor = "red";
+            }
+        }
+
+        divs = document.getElementsByClassName('bbb');
+        for(let i=0; i<divs.length; i++){
+            divs[i].style.color = "blue";
+        }
+    </script>
+</body>
+</html>

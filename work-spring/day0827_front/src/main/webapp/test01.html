@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<script>
+    //////////////////////////////// javascript는 html 문서내 어디서나 실행 가능합니다.
+</script>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        ////////////////////////////////// javascript는 html 문서내 어디서나 실행 가능합니다.
+    </script>
+    <style>
+/*css 스타일은 <head> 태그 내부에 작성하게 됩니다.*/
+/*
+선택자{
+   속성이름 : 값;
+   속성이름 : 값;
+}
+*/
+button{
+    display: block;
+    margin-top: 50px;
+    padding-top: 50px;
+    width: 100px;
+    height:100px;
+}
+
+#btn2{
+    color: red;
+}
+    </style>
+</head>
+<body>
+<script>
+    ////////////////////////////////////// javascript는 html 문서내 어디서나 실행 가능합니다.
+</script>
+<button id="btn1">나는 버튼입니다.1</button>
+<button id="btn2" disabled="true">나는 버튼입니다.2</button>
+<button>나는 버튼입니다.3</button>
+
+
+<script>
+    ///////////////////////////////////// javascript는 html 문서내 어디서나 실행 가능합니다.
+    v1 = 100; // 변수 선언시 var를 써야 하지만 생략해도 실행 됨.(호이스팅)
+    let v2 = 200; // ES6에서 새로 추가된 엄격한 변수 선언 키워드
+    const v3 = 300; // ES6에서 새로 추가된 엄격한 상수 선언 키워드
+    console.log(v1, v2, v3); // sout
+
+    var v1 = "hello1";
+    // let v2 = "hello2"; // 같은 scope 내에서 변수명 중복선언 안됨!
+    v3 = 900; // 상수이므로 값 변경 불가함!
+    console.log(v1, v2, v3);
+
+    console.log('bye');
+</script>
+</body>
+</html>

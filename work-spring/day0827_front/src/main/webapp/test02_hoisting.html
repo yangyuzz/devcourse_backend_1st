@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>호이스팅</title>
+</head>
+<body>
+    자바 스크립트에서 변수나 함수 선언시 <br>
+    해당 scope의 최상단에 선언부를 모두 알아서 모아놓고 실행시키는 방식을 말합니다.<br>
+
+    <script>
+        // 이 아래서 사용되는 모든 변수는 이 위치에 선언한거나 다름없음.
+        msg = 100;
+        console.log(msg);
+
+        msg = "hello???";
+        console.log(msg);
+
+        msg = {
+            name:'yangyu',
+            age:30
+        }
+        console.log(msg);
+        n=100;
+        console.log(n);
+
+        msg = [10, 'abc', 30];
+        console.log(msg);
+
+        msg = [
+            {id:'programmers', company:'grepp'},
+            {id:'yangyu', company:'devcourse'}
+        ]
+        console.log(msg);
+        ///////////////////////////////////////////////////////////
+        // f1과 f2는 대입연산을 수행하죠? 변수 처리됩니다. 변수 호이스팅
+        // f3는 대입이 아니라 함수 선언문을 씁니다. 함수 호이스팅
+        // f1(); 변수에 함수가 대입되기 전이라 호출 불가
+        // f2(); 변수에 함수가 대입되기 전이라 호출 불가
+        f3(); // 함수 호이스팅이라 이 위치에서도 호출 가능.
+
+        f1 = function(){
+            console.log('유이야!! 뭐해!!!')
+        }
+        f2 = ()=>{
+            console.log('준상님!! 어디갔어요!!');
+        }
+        function f3(){
+            console.log('프로그래머스 최고!!');
+        }
+
+        f1();
+        f2();
+        f3();
+        f2();
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <input type="text" id="userid">
+  <button id="btn01">새창띄우기</button>
+  <button id="btn02">새로고침</button>
+  <button id="btn03">프로그래머스</button>
+  <button id="btn04">뒤로가기</button>
+  <button id="btn05">html 문서에 있는 값 얻어오기</button>
+  <div id="target">~~~~~</div>
+<script>
+  // document 객체는 body 태그 내부에 있는 모든 태그들을 관리하는 애
+  // window가 최고관리 객체. 말그대로 창을 통으로 다 관리하는
+  //  - 사실 document도 window의 하위 객체임
+  let btn01 = window.document.getElementById('btn01');
+  btn01.onclick = function(){
+    window.open('test01.html');
+  }
+
+  let btn02 = document.getElementById('btn02');
+  btn02.onclick = function(){
+    window.location.reload();
+  }
+
+  let btn03 = document.getElementById('btn03');
+  btn03.onclick = function(){
+    window.location.href="http://programmers.co.kr";
+  }
+
+  let btn04 = document.getElementById('btn04');
+  btn04.onclick = function(){
+    window.history.go(-2); // 전전 방문 페이지로 돌아가기
+  }
+
+  let btn05 = document.getElementById('btn05');
+  btn05.onclick = function(){
+    let userValue = document.getElementById('userid').value;
+    alert('입력한 사용자 아이디 : '+userValue);
+    document.getElementById('userid').value = 'programmers';
+    // document.getElementById('target').innerText = '<h3>programmers<h3>';
+    document.getElementById('target').innerHTML = '<h3>programmers<h3>';
+  }
+</script>
+</body>
+</html>
