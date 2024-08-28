@@ -28,12 +28,28 @@
         <commons-dbcp2-version>2.9.0</commons-dbcp2-version>
         <commons-fileupload-version>2.0.0-M2</commons-fileupload-version>
 
-        <jackson-databind-version>2.15.2</jackson-databind-version>
-        <json-version>20230227</json-version>
+        <jackson-databind-version>2.15.4</jackson-databind-version>
+        <json-version>20231013</json-version>
         <!-- 버전관리 -->
     </properties>
 
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson-databind-version}</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.json/json -->
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>${json-version}</version>
+        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-fileupload2-jakarta-servlet6 -->
         <dependency>

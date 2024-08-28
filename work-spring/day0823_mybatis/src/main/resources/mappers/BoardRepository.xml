@@ -24,7 +24,7 @@
         SELECT
             NO, title, writer, CONTENT, READ_COUNT, REG_DATE, FNO, ORIGINAL_NAME, SAVED_PATH
         FROM
-            BOARD_TB B JOIN FILE_TB F
+            BOARD_TB B LEFT JOIN FILE_TB F
         ON
             B.NO = F.BNO
         WHERE

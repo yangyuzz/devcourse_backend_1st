@@ -16,11 +16,11 @@
     <table>
         <tr>
             <td>ID :</td>
-            <td><input type="text" name="userid"/></td>
+            <td><input type="text" name="userid" value="programmers"/></td>
         </tr>
         <tr>
             <td>PW :</td>
-            <td><input type="password" name="userpw"/></td>
+            <td><input type="password" name="userpw" value="1234"/></td>
         </tr>
         <tr>
             <td colspan="2">
