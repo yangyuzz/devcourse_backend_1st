@@ -7,10 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.nio.charset.Charset;
 
@@ -20,6 +17,11 @@ import java.nio.charset.Charset;
 public class CommentController {
     @Autowired
     private BoardService boardService;
+
+//    @PostMapping("/")
+//    @GetMapping
+//    @PutMapping
+//    @DeleteMapping
 
     @GetMapping("/write")
 //    @ResponseBody // /WEB-INF/views/comment write success.jsp 이런 행동 하지 말아라~ ViewResolver 한테 안보낸다~ 화면 안만든다 ~~
