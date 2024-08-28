@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.grepp.boot.model.repository.CommentRepository">
+
+    <insert id="insert" parameterType="com.grepp.boot.model.dto.CommentDTO">
+        INSERT INTO COMMENT_TB (BNO, CWRITER, CCONTENT)
+        VALUES(#{bno}, #{cwriter}, #{ccontent})
+    </insert>
+    <select id="selectList" parameterType="int" resultType="com.grepp.boot.model.dto.CommentDTO">
+        SELECT CNO, BNO, CWRITER, CCONTENT
+        FROM COMMENT_TB
+        WHERE BNO = #{bno}
+    </select>
+</mapper>
