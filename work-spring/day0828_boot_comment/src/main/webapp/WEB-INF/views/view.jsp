@@ -1,5 +1,5 @@
-<%@ page import="com.grepp.model.dto.BoardDTO" %>
-<%@ page import="com.grepp.model.dto.FileDTO" %><%--
+<%@ page import="com.grepp.boot.model.dto.BoardDTO" %>
+<%@ page import="com.grepp.boot.model.dto.FileDTO" %><%--
   Created by IntelliJ IDEA.
   User: 관리자
   Date: 2024-08-20

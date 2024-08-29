@@ -1,16 +1,13 @@
 package com.grepp.model.service;
 
 import com.grepp.model.dto.BoardDTO;
-import com.grepp.model.dto.CommentDTO;
 import com.grepp.model.dto.FileDTO;
 import com.grepp.model.repository.BoardRepository;
-import com.grepp.model.repository.CommentRepository;
 import com.grepp.model.repository.FileRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.xml.stream.events.Comment;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -27,8 +24,6 @@ public class BoardService {
     @Autowired
     private FileRepository fileRepo;
 
-    @Autowired
-    private CommentRepository cmtRepo;
 
 //    private BoardService(){}
 //    private static BoardService instance = new BoardService();
@@ -100,13 +95,5 @@ public class BoardService {
     public FileDTO getFileInfo(int fno){
         // file 다운로드 카운트를 update 한다던지 뭐 부가작업 필요하면 여기서 해야 함.
         return fileRepo.selectFile(fno);
-    }
-
-    public void writeComment(CommentDTO commentDTO){
-        cmtRepo.insert(commentDTO);
-    }
-
-    public List<CommentDTO> getComments(int bno){
-        return cmtRepo.selectList(bno);
     }
 }

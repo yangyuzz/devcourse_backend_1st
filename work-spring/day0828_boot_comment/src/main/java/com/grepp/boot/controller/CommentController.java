@@ -14,6 +14,8 @@ import java.nio.charset.Charset;
 //@Controller
 @RestController // 모든 메소드가 view를 생성하지 않고 data 응답하는 @ResponseBody인게 됨.
 @RequestMapping("/comment")
+//@CrossOrigin("*")
+//@CrossOrigin(origins = "http://localhost:8080")
 public class CommentController {
     @Autowired
     private BoardService boardService;

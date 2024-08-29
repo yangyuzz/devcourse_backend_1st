@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.grepp.boot.model.repository.BoardRepository">
+
+    <insert id="insert" parameterType="com.grepp.boot.model.dto.BoardDTO" useGeneratedKeys="true" keyColumn="no" keyProperty="no">
+        INSERT INTO BOARD_TB(TITLE,WRITER,CONTENT,REG_DATE) VALUES(#{title},#{writer},#{content},NOW())
+    </insert>
+
+<!--    <update id="update" parameterType="com.grepp.model.dto.BoardDTO">-->
+<!--        UPDATE BOARD_TB SET-->
+<!--        <if test="title != null">-->
+<!--            TITLE = #{title}-->
+<!--        </if>-->
+<!--        -->
+<!--    </update>-->
+
+    <select id="selectAll" resultType="com.grepp.boot.model.dto.BoardDTO">
+         SELECT NO,TITLE,WRITER,READ_COUNT as 'readCount',REG_DATE as 'regDate' FROM BOARD_TB
+    </select>
+
+
+    <select id="selectOne" parameterType="int" resultMap="rrr">
+        <!-- SELECT NO,TITLE,WRITER,CONTENT,READ_COUNT,REG_DATE FROM BOARD_TB WHERE NO=#{no} -->
+        SELECT
+            NO, title, writer, CONTENT, READ_COUNT, REG_DATE, FNO, ORIGINAL_NAME, SAVED_PATH
+        FROM
+            BOARD_TB B LEFT JOIN FILE_TB F
+        ON
+            B.NO = F.BNO
+        WHERE
+            B.NO = #{no}
+    </select>
+    <resultMap id="rrr" type="com.grepp.boot.model.dto.BoardDTO">
+        <result property="no" column="no"/>
+        <result property="title" column="title"/>
+        <result property="writer" column="writer"/>
+        <result property="content" column="content"/>
+        <result property="readCount" column="READ_COUNT"/>
+        <result property="regDate" column="REG_DATE"/>
+        <collection property="fileDTOList" ofType="com.grepp.boot.model.dto.FileDTO">
+            <result column="FNO" property="fno"/>
+            <result column="SAVED_PATH" property="savedPath"/>
+            <result column="ORIGINAL_NAME" property="originalName"/>
+        </collection>
+    </resultMap>
+
+    <select id="selectList" resultType="com.grepp.boot.model.dto.BoardDTO">
+        SELECT NO, TITLE, WRITER, READ_COUNT, REG_DATE FROM BOARD_TB
+        ORDER BY REG_DATE DESC
+        LIMIT #{sr}, #{cnt}
+    </select>
+
+    <select id="selectCount" resultType="java.lang.Integer">
+        SELECT COUNT(*) FROM BOARD_TB
+    </select>
+
+</mapper>
