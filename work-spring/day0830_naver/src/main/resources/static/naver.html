@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+ <h2>네이버 검색 화면입니다!.</h2>
+<input id="keyword" placeholder="이곳에 검색어를 입력하세요."/>
+<button id="btnSearch">검색</button>
+<div id="divResult"></div>
+<script>
+    document.getElementById("btnSearch").onclick = async function(){
+        let keyword = document.getElementById("keyword").value;
+        ///////////////////////////////// 현재 html 제공 서버랑 아래 네이버 서버랑 달라서 cors 에러 남
+        // let url = "https://openapi.naver.com/v1/search/shop.json?query="+keyword;
+        // // let myHeader = new Headers({
+        // //     "X-Naver-Client-Id" : "lPPtvn6xETbZnhOq1hVr",
+        // //     "X-Naver-Client-Secret" : "XZtLVfXfvW"
+        // // })
+        //
+        // let resp = await fetch(url, {
+        //     method:"get",
+        //     headers:{
+        //         "X-NAVER-Client-Id" : "bgbHjwmHco4MN04hAsnU",
+        //         "X-Naver-Client-Secret" : "xMZq4h_hyW"
+        //     }
+        // });
+        //////////////////////////////////////////////////////////////////////////////////////////
+        let url = "/naver/shop?keyword="+keyword;
+        let resp = await fetch(url); // 이 html 제공한 우리 서버한테 들어가는 요청이라 cors 안남.
+        let data = await resp.json();
+        console.log(data);
+        let items = data.items; // data['items']
+
+        let html = '';
+        html += '<table>';
+        for(let i=0; i<items.length; i++){
+            html += '<tr>';
+            html += '<td>'+items[i].title+'</td>'
+            html += '<td><img width="50" height="80" src="'+items[i].image+'"></td>'
+            html += '<td>'+items[i].lprice+'</td>'
+            html += '</tr>';
+        }
+        html += '</table>';
+        document.getElementById('divResult').innerHTML = html;
+    }
+</script>
+</body>
+</html>
