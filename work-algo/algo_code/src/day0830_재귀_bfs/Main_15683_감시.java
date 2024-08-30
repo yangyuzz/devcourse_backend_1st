@@ -65,6 +65,7 @@ public class Main_15683_감시 {
     }
     
     static void dfs(int camIdx, int[][] prev){
+//        print(prev);
         if(camIdx == cameras.size()){ // 모든 카메라가 배치된 상태네? 사각지대 체크하자
             int zero = 0;
             for(int i=0; i<N; i++){
@@ -83,9 +84,9 @@ public class Main_15683_감시 {
         for(int r=0; r<nowInfo.length; r++){ // 회전 반복문. 1,3,4번 카메라는 4번반복, 2번카메라는 두번 반복함.
             int[][] copy = deepcopy(prev); // 내가 색칠하기 전 지도를 복사뜸!
             // {0,1} 또는 {0,2,3} 방향에 색칠해야 됨.
-            int[] now = nowInfo[r]; // nowInfo{0,1} 이런 1차 배열이 나옴. 현재 카메라가 쳐다보는 방향들임.
+            int[] now = nowInfo[r]; // {0,1}, {2,3]이런 1차 배열이 나옴. 현재 카메라가 쳐다보는 방향들임.
             for(int d=0; d<now.length; d++){ // 1번 카메라는 1방향, 5번 카메라는 4방향
-                draw(d, cctv.i, cctv.j, copy);
+                draw(now[d], cctv.i, cctv.j, copy);
             }
             dfs(camIdx+1, copy); // 내가 방금 상,하 색칠한거 줄게. 나 기다린다?
         }
@@ -101,6 +102,17 @@ public class Main_15683_감시 {
             nextj += dj[dir];
         }
     }
+
+    static void print(int[][] origin){
+        for(int i=0; i<origin.length; i++) {
+            for(int j=0; j<origin[i].length; j++) {
+                System.out.print(origin[i][j]==7?"#":origin[i][j]);
+            }
+            System.out.println();
+        }
+        System.out.println("-----------------------------");
+    }
+
 
     static int[][] deepcopy(int[][] origin){
         int[][] copy = new int[origin.length][origin[0].length];
