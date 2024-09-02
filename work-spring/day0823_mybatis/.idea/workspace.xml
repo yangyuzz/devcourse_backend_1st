@@ -10,18 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d1ad4a9-dbdd-40aa-a97c-8a3098c974d3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grepp/controller/CommentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grepp/model/dto/CommentDTO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grepp/model/repository/CommentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grepp/model/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grepp/model/service/BoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mappers/CommentMapper.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/view.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0828_boot_comment/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../day0828_boot_comment/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0828_boot_comment/src/main/java/com/grepp/boot/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day0828_boot_comment/src/main/java/com/grepp/boot/controller/CommentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0828_boot_comment/src/main/java/com/grepp/boot/model/service/BoardService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day0828_boot_comment/src/main/java/com/grepp/boot/model/service/BoardService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0828_boot_comment/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../day0828_boot_comment/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0828_boot_comment/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../day0828_boot_comment/src/main/resources/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,9 +34,9 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2lJGf2qMRleFXyn3owUm33ppXy0" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -59,7 +48,7 @@
     "Tomcat Server.Tomcat 10.1.28.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Grepp_1기_work/work-spring/day0813_simple_board",
+    "last_opened_file_path": "F:/Grepp_1기_work/work-spring/day0823_mybatis",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -174,6 +163,7 @@
       <option name="presentableId" value="Default" />
       <updated>1724890865681</updated>
       <workItem from="1724890866764" duration="4602000" />
+      <workItem from="1725238703462" duration="1022000" />
     </task>
     <servers />
   </component>
