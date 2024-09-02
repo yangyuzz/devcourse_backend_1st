@@ -1,5 +1,7 @@
 package com.grepp.jpa.model.dto;
 
+import com.grepp.jpa.model.entity.BoardEntity;
+
 import java.util.List;
 
 // DB 테이블이랑 상관 없이 시스템에서 활용하는 데이터 뭉탱이 (테이블 구조와 정확히 일치하지 않음.)
@@ -15,10 +17,30 @@ public class BoardDTO {
     public BoardDTO() {
     }
 
+    public BoardDTO(BoardEntity entity){
+        this.no = entity.getNo();
+        this.title = entity.getTitle();
+        this.writer = entity.getWriter();
+        this.content = entity.getContent();
+        this.readCount = entity.getReadCount();
+        this.regDate = entity.getRegDate();
+    }
+
     public BoardDTO(String title, String content, String writer) {
         this.title = title;
         this.content = content;
         this.writer = writer;
+    }
+
+    public BoardEntity toEntity(){
+        BoardEntity entity = new BoardEntity();
+        entity.setTitle(title);
+        entity.setContent(content);
+        entity.setWriter(writer);
+        entity.setNo(no);
+        entity.setReadCount(readCount);
+        entity.setRegDate(regDate);
+        return entity;
     }
 
     public int getNo() {

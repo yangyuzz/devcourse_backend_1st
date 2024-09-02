@@ -5,6 +5,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 // 이 자바파일이 그대로 데이터베이스 테이블인거임! 즉 jpa 에서는 디비 테이블 안만들고 자바 클래스만 생성해도 자동으로 테이블이 되는거임!
 @Entity(name="board_tb")
+@Table(name="board_tb")
 public class BoardEntity {
     @Id // pk로 설정할 칼럼한테 붙여주는
     @GeneratedValue(strategy = GenerationType.IDENTITY) // IDENTITY가 mysql에서 auto_increment 한다는 의미임.
