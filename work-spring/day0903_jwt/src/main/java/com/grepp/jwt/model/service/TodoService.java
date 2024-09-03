@@ -38,6 +38,7 @@ public class TodoService {
     }
 
 
+    // 전송 여부 보다는 지금 내가 사용해야 하는 '데이터(재료)가 멀쩡'한지 체크하기
     private void validate(TodoEntity entity){ // entity 유효한지 체크하기
         if(entity == null)
             throw new RuntimeException("엔티티 널이다!!");
