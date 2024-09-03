@@ -32,6 +32,7 @@ public class TodoService {
             original.setTitle(entity.getTitle());
         if(original.isDone() != entity.isDone()) // 수행 여부가 달라졌네? 갱신!
             original.setDone(entity.isDone());
+        System.out.println(original);
         repository.save(original);
         return repository.findById(original.getId());
     }
