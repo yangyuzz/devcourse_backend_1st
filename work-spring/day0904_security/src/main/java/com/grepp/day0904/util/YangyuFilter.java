@@ -1,10 +1,12 @@
 package com.grepp.day0904.util;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.AuthorityUtils;
@@ -14,7 +16,10 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import java.awt.*;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 @Component
 public class YangyuFilter extends OncePerRequestFilter { // Filter는 디스패처서블릿 보다 먼저 작업을 처리함.
@@ -40,8 +45,20 @@ public class YangyuFilter extends OncePerRequestFilter { // Filter는 디스패�
                 securityContext.setAuthentication(authToken); // 컨텍스트에 토큰 담고
                 SecurityContextHolder.setContext(securityContext); // 홀더에 컨텍스트 고정
             }
+            filterChain.doFilter(request,response); // 때에 따라서는 아래 예외 발생시에도 나머지 필터를 더 진행해야 할 수 있음.
         }catch(Exception ex){
+            // 토큰이 유효하지 않아서 인증 불가임! DispatcherServlet으로 안가야 하고 그러므로 ResponseEntity를 리턴하는 작업을 부탁할 수 없음.
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setContentType(MediaType.APPLICATION_JSON_VALUE); // response는 기본 설정이 html 응답으로 되어있을 거라..
 
+            Map<String, Object> body = new HashMap<>(); // front한테 인증 불가에 대한 에러 메세지를 응답하고 싶어서
+            body.put("status", HttpServletResponse.SC_UNAUTHORIZED);
+            body.put("error", "Unauthorized~~~~~");
+            body.put("message", ex.getMessage());
+            body.put("path", request.getServletPath());
+
+            ObjectMapper mapper = new ObjectMapper(); // 평소에 @RequestBody, @ResponseBody 처리하면서 자바 <-> json 작업할 때 쓰이던 lib
+            mapper.writeValue(response.getOutputStream(), body); // 응답에 에러내용 json으로 만들어 보내기
         }
     }
 
