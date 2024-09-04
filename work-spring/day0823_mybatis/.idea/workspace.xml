@@ -10,11 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d1ad4a9-dbdd-40aa-a97c-8a3098c974d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/controller/MyOAuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/service/MyOAuth2Service.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/util/MyJwtExceptionFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/util/YangyuJwtFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/resources/application-prod.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0903_jwt/src/main/java/com/grepp/jwt/controller/TodoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day0903_jwt/src/main/java/com/grepp/jwt/controller/TodoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0903_jwt/src/main/java/com/grepp/jwt/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day0903_jwt/src/main/java/com/grepp/jwt/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0903_jwt/src/main/java/com/grepp/jwt/model/service/TodoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../day0903_jwt/src/main/java/com/grepp/jwt/model/service/TodoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../day0903_jwt/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../day0903_jwt/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,21 +49,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.28.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;F:/Grepp_1기_work/work-spring/day0823_mybatis&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.Tomcat 10.1.28.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "F:/Grepp_1기_work/work-spring/day0813_simple_board",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Tomcat 10.1.28" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.1.28" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -168,7 +171,7 @@
       <updated>1724890865681</updated>
       <workItem from="1724890866764" duration="4602000" />
       <workItem from="1725238703462" duration="1022000" />
-      <workItem from="1725344549291" duration="630000" />
+      <workItem from="1725344549291" duration="1031000" />
     </task>
     <servers />
   </component>
