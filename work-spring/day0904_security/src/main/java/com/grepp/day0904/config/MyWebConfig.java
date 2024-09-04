@@ -2,6 +2,7 @@ package com.grepp.day0904.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -19,4 +20,14 @@ public class MyWebConfig implements WebMvcConfigurer {
 //                .order(1) // 인터셉터가 여러 개인 경우 지들끼리 처리순서 결정해줌.
 //                .addPathPatterns("/todo", "/board"); // 로그인 처리할 요청이 다양한 경우 여러 개 등록 가능.
 //    }
+
+
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        registry.addMapping("/**")
+                .allowedOrigins("http://localhost:3000") // ex) front 서버 오리진
+                .allowedMethods("GET","POST","PUT","DELETE","PATCH", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
+    }
 }

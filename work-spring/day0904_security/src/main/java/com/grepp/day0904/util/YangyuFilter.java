@@ -45,7 +45,6 @@ public class YangyuFilter extends OncePerRequestFilter { // Filter는 디스패�
                 securityContext.setAuthentication(authToken); // 컨텍스트에 토큰 담고
                 SecurityContextHolder.setContext(securityContext); // 홀더에 컨텍스트 고정
             }
-            filterChain.doFilter(request,response); // 때에 따라서는 아래 예외 발생시에도 나머지 필터를 더 진행해야 할 수 있음.
         }catch(Exception ex){
             // 토큰이 유효하지 않아서 인증 불가임! DispatcherServlet으로 안가야 하고 그러므로 ResponseEntity를 리턴하는 작업을 부탁할 수 없음.
             response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
@@ -60,6 +59,7 @@ public class YangyuFilter extends OncePerRequestFilter { // Filter는 디스패�
             ObjectMapper mapper = new ObjectMapper(); // 평소에 @RequestBody, @ResponseBody 처리하면서 자바 <-> json 작업할 때 쓰이던 lib
             mapper.writeValue(response.getOutputStream(), body); // 응답에 에러내용 json으로 만들어 보내기
         }
+        filterChain.doFilter(request,response); // 때에 따라서는 아래 예외 발생시에도 나머지 필터를 더 진행해야 할 수 있음.
     }
 
     // JWT 토큰을 활용하는 과정에서 토큰 형식이 아래처럼 진행되는 경우가 많음
