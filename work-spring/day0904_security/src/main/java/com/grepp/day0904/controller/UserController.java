@@ -7,6 +7,7 @@ import com.grepp.day0904.model.service.UserService;
 import com.grepp.day0904.util.MyJwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +21,13 @@ public class UserController {
     @Autowired
     private MyJwtTokenProvider myJwtTokenProvider; // 토큰 생성 및 유효성 검증
 
+
     @PostMapping("/signup")
     public ResponseEntity<?> register(@RequestBody UserDTO userDTO){
         // 클라이언트 쪽에서 유효한 값을 '전송' 제대로 했는지 체크
         if(userDTO == null || userDTO.getPassword()==null) throw new RuntimeException("Invalid Password !!!!");
 
+//        userDTO.setPassword(passwordEncoder.encode(userDTO.getPassword())); // passwordEncoder가 salt를 써서 인코딩 해놓을거임.
         UserEntity entity = userDTO.toEntity();
         UserEntity resultEntity = userService.join(entity);
         return ResponseEntity.ok().body(new UserDTO(resultEntity));
