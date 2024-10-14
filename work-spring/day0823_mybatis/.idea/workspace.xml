@@ -10,14 +10,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9d1ad4a9-dbdd-40aa-a97c-8a3098c974d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/controller/MyOAuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/service/MyOAuth2Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/util/MyJwtExceptionFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/util/YangyuJwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/resources/application-prod.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BoardOAuth/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/BoardSecurityApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/config/WebMvcConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/config/WebSecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/controller/MyOAuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/controller/TodoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/exception/UnAuthorizedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/interceptor/MyJWTInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/dto/ResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/dto/TestRequestBodyDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/dto/TodoDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/dto/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/entity/TodoEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/entity/UserEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/repository/TodoRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/service/MyOAuth2Service.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/service/TodoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/model/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/util/MyJwtExceptionFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/util/MyTokenProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/java/com/grepp/boardjwt/util/YangyuJwtFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/resources/application-prod.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/main/resources/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BoardOAuth/src/test/java/com/grepp/boardoauth/BoardOAuthApplicationTests.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grepp/model/repository/BoardRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grepp/model/repository/BoardRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +83,7 @@
     "Tomcat Server.Tomcat 10.1.28.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/Grepp_1기_work/work-spring/day0813_simple_board",
+    "last_opened_file_path": "F:/MyWork/NBE1_2_Team01",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -172,6 +200,7 @@
       <workItem from="1724890866764" duration="4602000" />
       <workItem from="1725238703462" duration="1022000" />
       <workItem from="1725344549291" duration="1031000" />
+      <workItem from="1727248384256" duration="808000" />
     </task>
     <servers />
   </component>

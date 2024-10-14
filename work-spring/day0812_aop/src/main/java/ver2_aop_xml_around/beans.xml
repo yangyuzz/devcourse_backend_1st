@@ -9,7 +9,7 @@
 
     <aop:config>
         <aop:aspect ref="yangyu">
-            <aop:around method="aaaround" pointcut="execution(* make*())"/>
+            <aop:around method="aaaround" pointcut="bean(Boy)"/>
         </aop:aspect>
     </aop:config>
 </beans>
