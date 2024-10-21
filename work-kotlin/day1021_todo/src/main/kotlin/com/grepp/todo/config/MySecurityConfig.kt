@@ -31,6 +31,12 @@ class MySecurityConfig {
             .httpBasic { it.disable() } // Basic 인증 환경 아니고 jwt 토큰이니까 Basic 모드 비활성화
             .sessionManagement { it.disable() } // session 기반 아님.
             .authorizeHttpRequests(Customizer {
+                // swagger 페이지로 가는 토큰 처리 안하게 하기./////////////////////////////////////////
+                it.requestMatchers("/swagger.html").permitAll()
+                it.requestMatchers("/swagger-ui/**").permitAll()
+                it.requestMatchers("/swagger-resources/**").permitAll()
+                it.requestMatchers("/v3/api-docs/**").permitAll()
+                //////////////////////////////////////////////////////////////////////////////
                 it.requestMatchers("/auth/**").permitAll() // 로그인 하러 오는 애한테 왜 토큰없냐고 멱살잡으면 안되니까 들어오게 해주고.
                 it.anyRequest().authenticated() // 나머지는 다 인증되야(SecurityHolder에 인증 정보가 있는 요청만) 들어오게 할거임!
             })

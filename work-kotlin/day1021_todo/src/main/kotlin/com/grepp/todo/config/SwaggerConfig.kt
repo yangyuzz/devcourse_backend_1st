@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer
 
 @Configuration
-class SwaggerConfig:WebMvcConfigurer {
+class SwaggerConfig{
     @Bean
     fun swaggerAPI() : OpenAPI{
         val info = Info()
@@ -18,11 +18,11 @@ class SwaggerConfig:WebMvcConfigurer {
         return OpenAPI().info(info)
     }
 
-    override fun addCorsMappings(registry: CorsRegistry) {
-        registry.addMapping("/**")
-            .allowedOrigins("http://localhost:3000") // ex) front 서버 오리진
-            .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
-            .allowedHeaders("*")
-            .allowCredentials(true)
-    }
+//    override fun addCorsMappings(registry: CorsRegistry) {
+//        registry.addMapping("/**")
+//            .allowedOrigins("http://localhost:8080") // ex) front 서버 오리진
+//            .allowedMethods("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS")
+//            .allowedHeaders("*")
+//            .allowCredentials(true)
+//    }
 }
